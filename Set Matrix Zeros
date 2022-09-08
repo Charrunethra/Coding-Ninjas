@@ -107,3 +107,32 @@ public class Solution {
         
     }
     }
+    
+    //Alternating Solution using ArrayLists
+    import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static void setZeros(int matrix[][]) {
+        // Write your code here..
+         ArrayList<Integer> row=new ArrayList<>();
+        ArrayList<Integer> col=new ArrayList<>();
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix[0].length;j++){
+                if(matrix[i][j]==0){
+                    row.add(i);
+                    col.add(j);
+                }
+            }
+        }
+        for(int i=0;i<row.size();i++){
+            for(int j=0;j<matrix[0].length;j++){
+                matrix[row.get(i)][j]=0;
+            }
+        }
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<col.size();j++){
+                matrix[i][col.get(j)]=0;
+            }
+        }
+    }
+}
